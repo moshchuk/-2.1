@@ -1,0 +1,32 @@
+// Lab_03_4.cpp
+// < Мощук Мар'яна >
+// Лабораторна робота № 3.4
+// Розгалуження, задане плоскою фігурою.
+// Варіант 9
+
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+int main()
+{
+    setlocale(LC_CTYPE, "ukr");
+
+    double R;  
+    double x; 
+    double y; 
+
+    cout << "R = "; cin >> R;
+    cout << "x = "; cin >> x;
+    cout << "y = "; cin >> y;
+
+    // розгалуження в повній формі
+    if ((y <= sqrt(pow(R, 2) - pow(x, 2)) && y >= pow((x - 1), 2) && x >= 0) ||
+        (y <= 0 && -y >= sqrt(pow(R, 2) - pow(x, 2)) && x <= 0 && x >= -R))
+        cout << "yes" << endl;
+    else
+        cout << "no" << endl;
+
+    cin.get();
+    return 0;
+}
