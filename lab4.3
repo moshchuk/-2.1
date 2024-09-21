@@ -1,0 +1,42 @@
+// Lab_4_3.cpp
+// < Мощук Мар'яна >
+// Лабораторна робота № 4.3
+// Табуляція функції, заданої формулою: функція з параметрами.
+// Варіант 9
+
+#include <iostream>
+#include <iomanip>
+#include <cmath> 
+using namespace std;
+
+int main()
+{
+    setlocale(LC_CTYPE, "ukr");
+    double x, xp, xk, dx, F, c, b, a;
+    cout << "Введiть значення a: "; cin >> a;
+    cout << "Введiть значення b: "; cin >> b;
+    cout << "Введiть значення c: "; cin >> c;
+    cout << "xp = "; cin >> xp;
+    cout << "xk = "; cin >> xk;
+    cout << "dx = "; cin >> dx;
+    cout << fixed;
+    cout << "---------------------------" << endl;
+    cout << "|" << setw(7) << "x" << " |" << setw(10) << "F" << "|" << endl;
+    cout << "---------------------------" << endl;
+   
+    for (x = xp; x <= xk; x += dx)
+    {
+        if ( a < 0 && x != 0)
+           F= a* pow(x, 2) + pow( b, 2) * x ;
+        else
+            if ( a > 0 && x==0 )
+                F= x-(a/(x-c));
+            else
+                F= 1+(x/c);
+        
+        cout << "|" << setw(7) << setprecision(2) << x
+            << " |" << setw(10) << setprecision(4) << F << " |" << endl;
+    }
+    cout << "---------------------------" << endl;
+    return 0;
+}
