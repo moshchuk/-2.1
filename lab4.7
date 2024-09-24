@@ -32,7 +32,7 @@ int main()
 		S = a;
 		do {
 			n++;
-			R = (pow(-1, n) * pow(x, 2 * n + 1)) / (2 * n + 1);
+			R = pow(-1, n) * pow(x, 2 * n + 1) / (2 * n + 1);
 			a *= R;
 			S += a;
 		} while (abs(a) >= eps);
