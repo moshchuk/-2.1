@@ -1,0 +1,46 @@
+// Lab_4_5.cpp
+// < Мощук Мар'яна >
+// Лабораторна робота № 4.5
+// «Попадання» у плоску фігуру .
+// Варіант 9
+
+#include <iostream>
+#include <iomanip>
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+	double  x, y;
+	int R;
+	cout << "R = "; cin >> R;
+
+	srand((unsigned)time(NULL));
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << "x = "; cin >> x;
+		cout << "y = "; cin >> y;
+		if ((y <= sqrt(pow(R, 2) - pow(x, 2)) && y >= pow((x - 1), 2) && x >= 0) ||
+			(y <= 0 && -y >= sqrt(pow(R, 2) - pow(x, 2)) && x <= 0 && x >= -R))
+			cout << "yes" << endl;
+		else
+			cout << "no" << endl;
+	}
+	cout << endl << fixed;
+
+		for (int i = 0; i < 10; i++)
+		{
+			x = 2.0 *R* rand() / RAND_MAX - R;
+			y = 2.0 *R* rand() / RAND_MAX - R;
+			if ((y <= sqrt(pow(R, 2) - pow(x, 2)) && y >= pow((x - 1), 2) && x >= 0) ||
+				(y <= 0 && -y >= sqrt(pow(R, 2) - pow(x, 2)) && x <= 0 && x >= -R))
+				cout << setw(8) << setprecision(4) << x << " "
+				<< setw(8) << setprecision(4) << y << " " << "yes" << endl;
+			else
+				cout << setw(8) << setprecision(4) << x << " "
+				<< setw(8) << setprecision(4) << y << " " << "no" << endl;
+		}
+	return 0;
+}
